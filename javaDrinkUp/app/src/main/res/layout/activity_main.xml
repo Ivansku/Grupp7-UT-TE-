@@ -10,4 +10,48 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/ic_launcher" />
+
+        <com.cengalabs.flatui.views.FlatButton
+            android:layout_margin="5dp"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Drycksspel"
+            android:id="@+id/drinkGame"
+            flatui:fl_theme="@array/sky"
+            flatui:fl_touchEffect="fl_ripple"
+            flatui:fl_blockButtonEffectHeight="3dp" />
+
+        <com.cengalabs.flatui.views.FlatButton
+            android:layout_margin="5dp"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Dryck Recept"
+            android:id="@+id/drinkRecipe"
+            flatui:fl_theme="@array/sky"
+            flatui:fl_touchEffect="fl_ripple"
+            flatui:fl_blockButtonEffectHeight="3dp"
+            android:onClick="sendMessage"
+            />
+        <com.cengalabs.flatui.views.FlatButton
+            android:layout_margin="5dp"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Alkomätare"
+            android:id="@+id/alcoMeasure"
+            flatui:fl_theme="@array/sky"
+            flatui:fl_touchEffect="fl_ripple"
+            flatui:fl_blockButtonEffectHeight="3dp" />
     </LinearLayout>
+</LinearLayout>
