@@ -1,26 +1,31 @@
 package molk.javadrinkup;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
+import android.widget.ListView;
+import android.widget.Toast;
 
 
-public class RecipeActivity extends Activity {
+public class DrinksActivity extends Activity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recipe);
+        setContentView(R.layout.activity_drinks);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_recipe, menu);
+        getMenuInflater().inflate(R.menu.menu_drinks, menu);
         return true;
     }
 
@@ -38,8 +43,16 @@ public class RecipeActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-    public void startDrinks(View view) {
-        Intent intent = new Intent(this, DrinksActivity.class);
-        startActivity(intent);
+    private String[] toppings = new String[20];
+    public void ListDrinks(View view) {
+        toppings[0] = "Cheese";
+        toppings[1] = "Pepperoni";
+        toppings[2] = "Black Olives";
+        // ...
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, toppings);
+        ListView listView = (ListView) findViewById(R.id.drinksListView);
+        listView.setAdapter(adapter);
     }
+
 }

@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-    public void sendMessage(View view) {
+    public void startRecipe(View view) {
         Intent intent = new Intent(this, RecipeActivity.class);
         startActivity(intent);
     }
