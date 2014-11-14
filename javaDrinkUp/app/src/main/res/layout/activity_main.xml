@@ -42,7 +42,7 @@
             flatui:fl_theme="@array/sky"
             flatui:fl_touchEffect="fl_ripple"
             flatui:fl_blockButtonEffectHeight="3dp"
-            android:onClick="startRecipe"
+            android:onClick="sendMessage"
             />
         <com.cengalabs.flatui.views.FlatButton
             android:layout_margin="5dp"
