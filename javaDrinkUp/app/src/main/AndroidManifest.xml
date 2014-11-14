@@ -20,6 +20,10 @@
             android:name="molk.javadrinkup.RecipeActivity"
             android:label="@string/title_activity_recipe" >
         </activity>
+        <activity
+            android:name="molk.javadrinkup.DrinksActivity"
+            android:label="@string/title_activity_drinks" >
+        </activity>
     </application>
 
 </manifest>
