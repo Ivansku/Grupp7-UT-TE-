@@ -11,6 +11,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -41,7 +42,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/drinksListView"
-            android:layout_gravity="center_horizontal"
 
             />
     </LinearLayout>

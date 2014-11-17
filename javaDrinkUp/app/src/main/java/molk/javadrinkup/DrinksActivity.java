@@ -11,6 +11,8 @@ import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 
 public class DrinksActivity extends Activity {
 
@@ -21,6 +23,30 @@ public class DrinksActivity extends Activity {
         setContentView(R.layout.activity_drinks);
     }
 
+    public void ListDrinks(View view) {
+        ArrayList<String> listItems=new ArrayList<String>();
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line, listItems);
+        //Adds Text in ListView layout.
+        listItems.add("Staropramen");
+        listItems.add("Corona");
+        listItems.add("White Russian");
+        listItems.add("Smirnoff Ice");
+        listItems.add("Breezer");
+        listItems.add("Rom & Cola");
+        listItems.add("Gin & Tonic");
+
+        ListView listView = (ListView) findViewById(R.id.drinksListView);
+        listView.setAdapter(adapter);
+
+    }
+    @Override
+    protected void onStart()
+    {
+        // TODO Auto-generated method stub
+        super.onStart();
+
+        
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -43,16 +69,6 @@ public class DrinksActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-    private String[] toppings = new String[20];
-    public void ListDrinks(View view) {
-        toppings[0] = "Cheese";
-        toppings[1] = "Pepperoni";
-        toppings[2] = "Black Olives";
-        // ...
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, toppings);
-        ListView listView = (ListView) findViewById(R.id.drinksListView);
-        listView.setAdapter(adapter);
-    }
+
 
 }
