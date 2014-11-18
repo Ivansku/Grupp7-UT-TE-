@@ -7,5 +7,9 @@
     <string name="title_activity_recipe">RecipeActivity</string>
     <string name="title_activity_drinks">DrinksActivity</string>
     <string name="title_activity_beer">BeerActivity</string>
+    <string name="title_activity_alkosoda">AlkosodaActivity</string>
+    <string name="title_activity_cider">CiderActivity</string>
+    <string name="title_activity_wine">WineActivity</string>
+    <string name="title_activity_other">OtherActivity</string>
 
 </resources>

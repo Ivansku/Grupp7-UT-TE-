@@ -47,4 +47,24 @@ public class RecipeActivity extends Activity {
         Intent intent = new Intent(this, BeerActivity.class);
         startActivity(intent);
     }
+        //Opens Alkoläsk-tab
+    public void startAlksoda(View view) {
+        Intent intent = new Intent(this, AlkosodaActivity.class);
+        startActivity(intent);
+    }
+        //Opens Cider-tab
+    public void startCider(View view) {
+        Intent intent = new Intent(this, CiderActivity.class);
+        startActivity(intent);
+    }
+        //Open Wine-tab
+    public void startWine(View view) {
+        Intent intent = new Intent(this, WineActivity.class);
+        startActivity(intent);
+    }
+
+    public void startOther(View view) {
+        Intent intent = new Intent(this, OtherActivity.class);
+        startActivity(intent);
+    }
 }
