@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 
 public class DrinksActivity extends Activity {
-
+    ArrayList<String> listItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class DrinksActivity extends Activity {
     }
 //Method for list
     public void ListDrinks(View view) {
-        ArrayList<String> listItems=new ArrayList<String>();
+        listItems =new ArrayList<String>();
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line, listItems);
         //Adds Items in ListView-list.
         listItems.add("Staropramen");
@@ -37,8 +37,15 @@ public class DrinksActivity extends Activity {
         //Print list
         ListView listView = (ListView) findViewById(R.id.drinksListView);
         listView.setAdapter(adapter);
+        HandleDrinksClick(view);
+
 
     }
+        public void HandleDrinksClick(View view){
+            if (listItems.contains("Staropramen")){
+                //Toast.makeText(this,"Staropramen buttom pressed", Toast.LENGTH_SHORT).show();
+            }
+        }
     @Override
     protected void onStart()
     {
