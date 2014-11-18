@@ -24,6 +24,10 @@
             android:name="molk.javadrinkup.DrinksActivity"
             android:label="@string/title_activity_drinks" >
         </activity>
+        <activity
+            android:name="molk.javadrinkup.BeerActivity"
+            android:label="@string/title_activity_beer" >
+        </activity>
     </application>
 
 </manifest>

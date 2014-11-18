@@ -42,7 +42,7 @@ public class DrinksActivity extends Activity {
 
     }
         public void HandleDrinksClick(View view){
-            if (listItems.contains("Staropramen")){
+            if (listItems.contains("Rom & Cola")){
                 //Toast.makeText(this,"Staropramen buttom pressed", Toast.LENGTH_SHORT).show();
             }
         }

@@ -57,7 +57,10 @@
             android:drawableLeft="@drawable/ic_launcher"
             flatui:fl_theme="@array/sky"
             flatui:fl_touchEffect="fl_ripple"
-            flatui:fl_blockButtonEffectHeight="3dp" />
+            flatui:fl_blockButtonEffectHeight="3dp"
+
+            android:onClick = "startBeer"
+            />
         <com.cengalabs.flatui.views.FlatButton
             android:layout_margin="5dp"
             android:layout_width="250dp"
