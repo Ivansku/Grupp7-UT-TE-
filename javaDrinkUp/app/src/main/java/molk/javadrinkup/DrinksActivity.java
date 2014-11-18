@@ -22,11 +22,11 @@ public class DrinksActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drinks);
     }
-
+//Method for list
     public void ListDrinks(View view) {
         ArrayList<String> listItems=new ArrayList<String>();
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line, listItems);
-        //Adds Text in ListView layout.
+        //Adds Items in ListView-list.
         listItems.add("Staropramen");
         listItems.add("Corona");
         listItems.add("White Russian");
@@ -34,7 +34,7 @@ public class DrinksActivity extends Activity {
         listItems.add("Breezer");
         listItems.add("Rom & Cola");
         listItems.add("Gin & Tonic");
-
+        //Print list
         ListView listView = (ListView) findViewById(R.id.drinksListView);
         listView.setAdapter(adapter);
 

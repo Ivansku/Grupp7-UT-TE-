@@ -38,6 +38,7 @@ public class RecipeActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+    //Method open Drinks tab
     public void startDrinks(View view) {
         Intent intent = new Intent(this, DrinksActivity.class);
         startActivity(intent);
