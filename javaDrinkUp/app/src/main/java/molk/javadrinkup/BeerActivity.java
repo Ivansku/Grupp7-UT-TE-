@@ -4,14 +4,37 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 
 public class BeerActivity extends Activity {
-
+    ArrayList<String> listItems;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beer);
+    }
+        //Method for list
+    public void ListBeer(View view) {
+
+        listItems =new ArrayList<String>();
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line, listItems);
+        //Adds Items in ListView-list.
+        listItems.add("Staropramen");
+        listItems.add("Corona");
+        listItems.add("White Russian");
+        listItems.add("Smirnoff Ice");
+        listItems.add("Breezer");
+        listItems.add("Rom & Cola");
+        listItems.add("Gin & Tonic");
+        //Print list
+        ListView listView = (ListView) findViewById(R.id.beerListView);
+        listView.setAdapter(adapter);
+
     }
 
 

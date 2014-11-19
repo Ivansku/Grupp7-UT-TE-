@@ -27,7 +27,7 @@
         android:layout_gravity="right"
         flatui:fl_touchEffect="fl_ripple"
         flatui:fl_blockButtonEffectHeight="3dp"
-        android:onClick = "ListDrinks"
+        android:onClick = "ListBeer"
         />
 
     <LinearLayout
@@ -41,7 +41,7 @@
         <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/drinksListView"
+            android:id="@+id/beerListView"
 
 
             />
