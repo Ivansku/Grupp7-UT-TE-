@@ -1,0 +1,81 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:flatui="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_marginLeft="105dp"
+            android:layout_marginBottom="230dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="0dp"
+            android:text="P2
+P2 , en av Sveriges mest beställda drinkar på krogen. Detta är verkligen en drink som man förknippar med sommaren med sin fräsha färg och smak av gröna äpplen. Sourz Apple är en utmärkt ingrediens för drinkar då den har en klar färg och stark smak.
+
+Ingredienser
+Vaniljvodka 3,0 cl
+Sourz Apple Likör 3,0 cl
+Fruktsoda (t.ex. 7-up / sprite) 20,0 cl
+Lime 3,0 skivor
+Iskuber
+
+Tillbehör:
+Citron 1,0 skiva
+Cocktailpinne
+Highballglas
+
+Tillagning
+1  Fyll highballglas till 2/3-delar med iskuber.
+Lägg i citronskivor.
+
+2  Häll på vodka och likör.
+Fyll upp med fruktsoda.
+
+3  Sätt i en cocktailpinne.
+Dekorera med citronskiva.
+"
+            />
+
+        <com.cengalabs.flatui.views.FlatButton
+            android:layout_marginBottom="0dp"
+            android:layout_margin="5dp"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Gå till Systembolaget"
+            android:id="@+id/Other"
+            flatui:fl_theme="@array/sky"
+            flatui:fl_touchEffect="fl_ripple"
+            flatui:fl_blockButtonEffectHeight="3dp"
+            android:onClick ="startSystem"
+            />
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

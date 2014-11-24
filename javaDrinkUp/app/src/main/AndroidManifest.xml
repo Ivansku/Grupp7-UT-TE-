@@ -44,6 +44,10 @@
             android:name="molk.javadrinkup.OtherActivity"
             android:label="@string/title_activity_other" >
         </activity>
+        <activity
+            android:name="molk.javadrinkup.StaropramenActivity"
+            android:label="@string/title_activity_staropramen" >
+        </activity>
     </application>
 
 </manifest>

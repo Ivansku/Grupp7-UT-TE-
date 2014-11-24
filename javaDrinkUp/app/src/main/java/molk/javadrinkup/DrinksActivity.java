@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 
 public class DrinksActivity extends Activity {
     // Array of strings storing drink names
+
     String[] drinks = new String[] {
             "Staropramen",
             "Corona",
@@ -62,7 +64,12 @@ public class DrinksActivity extends Activity {
     };
 
     /** Called when the activity is first created. */
+    public void startStaropramen(View view) {
+        Intent intent = new Intent(this, StaropramenActivity.class);
+        startActivity(intent);
+    }
     @Override
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drinks);
@@ -76,6 +83,7 @@ public class DrinksActivity extends Activity {
             hm.put("inf","Info : " + info[i]);
             hm.put("pic", Integer.toString(pictures[i]) );
             aList.add(hm);
+
         }
 
         // Keys used in Hashmap
@@ -89,14 +97,16 @@ public class DrinksActivity extends Activity {
         SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), aList, R.layout.activity_drink_list, from, to);
 
         // Getting a reference to listview of main.xml layout file
-        ListView listView = ( ListView ) findViewById(R.id.drinksListView);
+        final ListView listView = ( ListView ) findViewById(R.id.drinksListView);
 
         // Setting the adapter to the listView
         listView.setAdapter(adapter);
 
         // Item Click Listener for the listview
+
         AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
             @Override
+
             public void onItemClick(AdapterView<?> parent, View container, int position, long id) {
                 // Getting the Container Layout of the ListView
                 LinearLayout linearLayoutParent = (LinearLayout) container;
@@ -105,11 +115,17 @@ public class DrinksActivity extends Activity {
                 LinearLayout linearLayoutChild = (LinearLayout ) linearLayoutParent.getChildAt(1);
 
                 // Getting the Country TextView
-                TextView tvCountry = (TextView) linearLayoutChild.getChildAt(0);
+                TextView tvDrink = (TextView) linearLayoutChild.getChildAt(0);
 
-                Toast.makeText(getBaseContext(), tvCountry.getText().toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(), tvDrink.getText().toString(), Toast.LENGTH_SHORT).show();
+                if(tvDrink.getText().toString().equals("Staropramen")){
+                        startStaropramen(linearLayoutChild);
+
+                }
             }
+
         };
+
 
         // Setting the item click listener for the listview
         listView.setOnItemClickListener(itemClickListener);

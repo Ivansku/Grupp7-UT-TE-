@@ -11,5 +11,6 @@
     <string name="title_activity_cider">CiderActivity</string>
     <string name="title_activity_wine">WineActivity</string>
     <string name="title_activity_other">OtherActivity</string>
+    <string name="title_activity_staropramen">StaropramenActivity</string>
 
 </resources>
