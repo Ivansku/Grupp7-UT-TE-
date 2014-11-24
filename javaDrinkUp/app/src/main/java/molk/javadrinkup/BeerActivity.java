@@ -11,7 +11,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 
-public class BeerActivity extends Activity {
+public class BeerActivity extends Activity {    //test
     ArrayList<String> listItems;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
