@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class RecipeActivity extends Activity {
@@ -14,6 +16,7 @@ public class RecipeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
+
 
     }
 
@@ -69,4 +72,5 @@ public class RecipeActivity extends Activity {
         Intent intent = new Intent(this, OtherActivity.class);
         startActivity(intent);
     }
+
 }

@@ -9,19 +9,19 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class StaropramenActivity extends Activity {
+public class p2Activity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_staropramen);
+        setContentView(R.layout.activity_p2);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_staropramen, menu);
+        getMenuInflater().inflate(R.menu.menu_p2, menu);
         return true;
     }
 
@@ -40,7 +40,7 @@ public class StaropramenActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
     public void startSystem(View view) {
-        String url = "http://www.systembolaget.se/1679";
+        String url = "http://www.dricka.se/drinkar/p2/";
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse(url));
         startActivity(i);

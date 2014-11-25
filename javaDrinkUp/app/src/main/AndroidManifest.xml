@@ -48,6 +48,22 @@
             android:name="molk.javadrinkup.StaropramenActivity"
             android:label="@string/title_activity_staropramen" >
         </activity>
+        <activity
+            android:name="molk.javadrinkup.Whiterussian"
+            android:label="@string/title_activity_whiterussian" >
+        </activity>
+        <activity
+            android:name="molk.javadrinkup.WhiterussianActivity"
+            android:label="@string/title_activity_whiterussian" >
+        </activity>
+        <activity
+            android:name="molk.javadrinkup.p2Activity"
+            android:label="@string/title_activity_p2" >
+        </activity>
+        <activity
+            android:name="molk.javadrinkup.RedbullvodkaActivity"
+            android:label="@string/title_activity_redbullvodka" >
+        </activity>
     </application>
 
 </manifest>

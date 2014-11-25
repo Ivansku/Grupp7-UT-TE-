@@ -15,8 +15,9 @@
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edit_message"
+        android:id="@+id/search_drink"
         android:hint="Sök på en dryck eller på ingridienser"
+
         />
 
     <com.cengalabs.flatui.views.FlatButton
@@ -28,6 +29,7 @@
         android:layout_gravity="right"
         flatui:fl_touchEffect="fl_ripple"
         flatui:fl_blockButtonEffectHeight="3dp"
+        android:onClick="searchTextDrinks"
 
         />
 

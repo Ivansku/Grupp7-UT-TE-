@@ -9,8 +9,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -20,19 +22,17 @@ import android.widget.Toast;
 
 
 public class DrinksActivity extends Activity {
+    public final static String EXTRA_MESSAGE = "molk.javaDrinkUp.MESSAGE";
     // Array of strings storing drink names
 
     String[] drinks = new String[] {
-            "Staropramen",
-            "Corona",
-            "Rom & Cola",
-            "Whisky",
             "White Russian",
-            "Bulldog IPA",
+            "P2",
+            "Vodka Redbull",
             "Gin & Tonic",
-            "Smirnoff Ice",
-            "Breezer",
-            "Sake"
+            "Blue Lagoon",
+            "Screwdriver",
+            "Cuba Libre (Rom & Cola)"
     };
 
     // Array of integers points to images stored in /res/drawable-ldpi/
@@ -44,9 +44,7 @@ public class DrinksActivity extends Activity {
             R.drawable.ic_launcher,
             R.drawable.ic_launcher,
             R.drawable.ic_launcher,
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher
+
     };
 
     // Array of strings to store info
@@ -58,14 +56,19 @@ public class DrinksActivity extends Activity {
             "Alkoholhalt: 5% Storlek:50cl",
             "Alkoholhalt: 5% Storlek:50cl",
             "Alkoholhalt: 5% Storlek:50cl",
-            "Alkoholhalt: 5% Storlek:50cl",
-            "Alkoholhalt: 5% Storlek:50cl",
-            "Alkoholhalt: 5% Storlek:50cl"
     };
 
     /** Called when the activity is first created. */
-    public void startStaropramen(View view) {
-        Intent intent = new Intent(this, StaropramenActivity.class);
+    public void startWhiterussian(View view) {
+        Intent intent = new Intent(this, WhiterussianActivity.class);
+        startActivity(intent);
+    }
+    public void startP2(View view) {
+        Intent intent = new Intent(this, p2Activity.class);
+        startActivity(intent);
+    }
+    public void startRedbullvodka(View view) {
+        Intent intent = new Intent(this, RedbullvodkaActivity.class);
         startActivity(intent);
     }
     @Override
@@ -73,11 +76,17 @@ public class DrinksActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drinks);
+        String message = getIntent().getStringExtra(DrinksActivity.EXTRA_MESSAGE);
+        TextView myTextview = (TextView) findViewById(R.id.search_drink);
+        myTextview.setText(message);
+
+
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         // Each row in the list stores drink name, info and pic
         List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
 
-        for(int i=0;i<10;i++){
+        for(int i=0;i<7;i++){
             HashMap<String, String> hm = new HashMap<String,String>();
             hm.put("txt", "" + drinks[i]);
             hm.put("inf","Info : " + info[i]);
@@ -117,9 +126,17 @@ public class DrinksActivity extends Activity {
                 // Getting the Country TextView
                 TextView tvDrink = (TextView) linearLayoutChild.getChildAt(0);
 
-                Toast.makeText(getBaseContext(), tvDrink.getText().toString(), Toast.LENGTH_SHORT).show();
-                if(tvDrink.getText().toString().equals("Staropramen")){
-                        startStaropramen(linearLayoutChild);
+
+                if(tvDrink.getText().toString().equals("White Russian")){
+                        startWhiterussian(linearLayoutChild);
+
+                }
+                if(tvDrink.getText().toString().equals("P2")){
+                    startP2(linearLayoutChild);
+
+                }
+                if(tvDrink.getText().toString().equals("Vodka Redbull")){
+                    startRedbullvodka(linearLayoutChild);
 
                 }
             }
@@ -135,6 +152,25 @@ public class DrinksActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+    public void searchTextDrinks(View view) {
+
+        EditText editText = (EditText) findViewById(R.id.search_drink);
+
+        String message = editText.getText().toString().toLowerCase();
+        if (message.equals("white russian")||(message.equals("whiterussian"))){
+            Intent intent = new Intent(this,WhiterussianActivity.class);
+            startActivity(intent);
+        }
+        if (message.equals("p2")){
+            Intent intent = new Intent(this,p2Activity.class);
+            startActivity(intent);
+        }
+        if (message.equals("redbull vodka")||message.equals("redbullvodka")||message.equals("vodka redbull")||message.equals("vodkaredbull")){
+            Intent intent = new Intent(this,RedbullvodkaActivity.class);
+            startActivity(intent);
+        }
+
     }
 
 }
