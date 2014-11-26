@@ -7,21 +7,26 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 
-public class RedbullvodkaActivity extends Activity {
+public class DrinksInterfaceActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_redbullvodka);
+        setContentView(R.layout.activity_drinksinterface);
+        TextView descriptionHeader = (TextView) findViewById(R.id.descriptionHeader);
+        TextView descriptionContent = (TextView) findViewById(R.id.descriptionContent);
+        descriptionHeader.setText(getResources().getString(R.string.Whiterussian));
+        descriptionContent.setText(getResources().getString(R.string.Whiterussian));
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_redbullvodka, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -40,7 +45,8 @@ public class RedbullvodkaActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
     public void startSystem(View view) {
-        String url = "http://www.dricka.se/drinkar/vodka-redbull/";
+
+        String url = getResources().getString(R.string.linkStaropramen);
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse(url));
         startActivity(i);

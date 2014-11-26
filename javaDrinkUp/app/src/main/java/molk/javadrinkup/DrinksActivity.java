@@ -5,8 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.WindowManager;
@@ -60,15 +62,16 @@ public class DrinksActivity extends Activity {
 
     /** Called when the activity is first created. */
     public void startWhiterussian(View view) {
-        Intent intent = new Intent(this, WhiterussianActivity.class);
+        Intent intent = new Intent(this, DrinksInterfaceActivity.class);
         startActivity(intent);
+
     }
     public void startP2(View view) {
-        Intent intent = new Intent(this, p2Activity.class);
+        Intent intent = new Intent(this, DrinksInterfaceActivity.class);
         startActivity(intent);
     }
     public void startRedbullvodka(View view) {
-        Intent intent = new Intent(this, RedbullvodkaActivity.class);
+        Intent intent = new Intent(this, DrinksInterfaceActivity.class);
         startActivity(intent);
     }
     @Override
@@ -159,15 +162,15 @@ public class DrinksActivity extends Activity {
 
         String message = editText.getText().toString().toLowerCase();
         if (message.equals("white russian")||(message.equals("whiterussian"))){
-            Intent intent = new Intent(this,WhiterussianActivity.class);
+            Intent intent = new Intent(this,DrinksInterfaceActivity.class);
             startActivity(intent);
         }
         if (message.equals("p2")){
-            Intent intent = new Intent(this,p2Activity.class);
+            Intent intent = new Intent(this,DrinksInterfaceActivity.class);
             startActivity(intent);
         }
         if (message.equals("redbull vodka")||message.equals("redbullvodka")||message.equals("vodka redbull")||message.equals("vodkaredbull")){
-            Intent intent = new Intent(this,RedbullvodkaActivity.class);
+            Intent intent = new Intent(this,DrinksInterfaceActivity.class);
             startActivity(intent);
         }
 
