@@ -41,8 +41,15 @@ public class MainActivity extends Activity {
     }
     //Method open RecipeActivity
     public void startRecipe(View view) {
-        Intent intent = new Intent(this, RecipeActivity.class);
+        Intent intent = new Intent(this,RecipeActivity.class);
         startActivity(intent);
+    }
+    @Override
+    public void onBackPressed(){
+
+            setContentView(R.layout.activity_main);
+
+
     }
 
 }
