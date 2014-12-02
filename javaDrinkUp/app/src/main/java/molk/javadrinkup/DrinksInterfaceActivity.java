@@ -10,16 +10,26 @@ import android.view.View;
 import android.widget.TextView;
 
 
-public class DrinksInterfaceActivity extends Activity {
+public class DrinksInterfaceActivity extends DrinksActivity {
 
+
+    /*/public DrinksInterfaceActivity(int ID){
+        super();
+        //Gör databas
+        //Select From Drinks(bas)where ID = X
+        //SQL LITE
+    }
+    /*/
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drinksinterface);
+        DrinksActivity hej = new DrinksActivity();
         TextView descriptionHeader = (TextView) findViewById(R.id.descriptionHeader);
         TextView descriptionContent = (TextView) findViewById(R.id.descriptionContent);
-        descriptionHeader.setText(getResources().getString(R.string.Whiterussian));
-        descriptionContent.setText(getResources().getString(R.string.Whiterussian));
+
+        descriptionHeader.setText(getResources().getString(R.string.WhiterussianHead));
+        descriptionContent.setText(getResources().getString(R.string.WhiterussianInfo));
     }
 
 

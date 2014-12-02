@@ -14,7 +14,8 @@
     <string name="title_activity_staropramen">DrinksInterfaceActivity</string>
     <string name="Staropramen"><font size="21"><b>Staropramen</b>\n\n\n</font>         Tillverkad i  Tjeckien\n <b>Alkoholhalt:</b> 5,0 %\n <b>Användning:</b> Serveras vid cirka 10°C till husmanskost eller som sällskapsdryck. \n <b>Smak:</b> Maltig smak med liten sötma, inslag av knäckebröd, torkade aprikoser, örter och apelsinskal. \n <b>Färg:</b> Mörk, gul färg.\n <b>Provning</b> 2012-11-27\n <b>Leverantör:</b> Carlsberg Sverige AB \n <b>Producent</b> Staropramen.\n <b>Råvaror:</b> Tjeckisk pilsnermalt; saaz humle, huvudsakligen från Zatecområdet; underjäst\n <b>Doft:</b> Maltig doft med inslag av knäckebröd, torkade aprikoser, örter och apelsin.\n</string>
     <string name="title_activity_whiterussian">Whiterussian</string>
-    <string name="Whiterussian"><font size="21"><b>White Russian</b>\n\n\n</font><b>Alkoholhalt:</b> 5,0 %\n <b>Användning:</b>Partydrink som passar när det är varmt ute. \n <b>Smak:</b> Sötsmakad choklad med en hint av spritsmak.\n <b>Färg:</b> En blandning av brun och vit färg.\n <b>Råvaror:</b> Vodka, Kahlúa och Mjölk\n</string>
+    <string name="WhiterussianHead"><font size="21"><b>White Russian</b>\n\n\n</font></string>
+    <string name="WhiterussianInfo"><b>Alkoholhalt:</b> 5,0 %\n <b>Användning:</b>Partydrink som passar när det är varmt ute. \n <b>Smak:</b> Sötsmakad choklad med en hint av spritsmak.\n <b>Färg:</b> En blandning av brun och vit färg.\n <b>Råvaror:</b> Vodka, Kahlúa och Mjölk\n</string>
     <string name="title_activity_p2">p2Activity</string>
     <string name="P2"><font size="21"><b>P2</b>\n\n\n</font><b>Alkoholhalt:</b> 5,0 %\n <b>Användning:</b>Partydrink \n <b>Smak:</b> Syrlig spritdryck.\n <b>Färg:</b> En vattenklar färg med nyanser av grönt\n<b>Råvaror:</b> Vaniljvodka, Sourz Sour Apple, Limejuice och fruktsoda\n</string>
     <string name="title_activity_redbullvodka">RedbullvodkaActivity</string>
