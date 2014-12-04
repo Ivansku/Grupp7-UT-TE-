@@ -27,6 +27,9 @@ import android.widget.Toast;
 public class DrinksActivity extends Activity {
     String ID;
     public final static String EXTRA_MESSAGE = "molk.javaDrinkUp.MESSAGE";
+
+    public final static String EXTRA_DRINK_ID = "se.molk.DRINK_ID";
+
     // Array of strings storing drink names
 
     String[] drinks = new String[] {
@@ -122,15 +125,25 @@ public class DrinksActivity extends Activity {
 
 
                 if(tvDrink.getText().toString().equals("White Russian")){
-                    //Skicka signal till Databas
-                    ID = "WhiteRussian";
-                    startDrinksInterfaceActivity(linearLayoutChild);
+                    startDrinksInterfaceActivity(linearLayoutChild, 1);
                 }
                 if(tvDrink.getText().toString().equals("P2")){
-                    startDrinksInterfaceActivity(linearLayoutChild);
+                    startDrinksInterfaceActivity(linearLayoutChild, 2);
                 }
                 if(tvDrink.getText().toString().equals("Vodka Redbull")){
-                    startDrinksInterfaceActivity(linearLayoutChild);
+                    startDrinksInterfaceActivity(linearLayoutChild, 3);
+                }
+                if(tvDrink.getText().toString().equals("Gin & Tonic")){
+                    startDrinksInterfaceActivity(linearLayoutChild, 4);
+                }
+                if(tvDrink.getText().toString().equals("Blue Lagoon")){
+                    startDrinksInterfaceActivity(linearLayoutChild, 5);
+                }
+                if(tvDrink.getText().toString().equals("Screwdriver")){
+                    startDrinksInterfaceActivity(linearLayoutChild, 6);
+                }
+                if(tvDrink.getText().toString().equals("Cuba Libre (Rom & Cola)")){
+                    startDrinksInterfaceActivity(linearLayoutChild, 7);
                 }
 
             }
@@ -142,8 +155,9 @@ public class DrinksActivity extends Activity {
         // Setting the item click listener for the listview
         listView.setOnItemClickListener(itemClickListener);
     }
-    public void startDrinksInterfaceActivity(View view) {
+    public void startDrinksInterfaceActivity(View view, int drinkId) {
         Intent intent = new Intent(this, DrinksInterfaceActivity.class);
+        intent.putExtra(EXTRA_DRINK_ID, drinkId);
         //DrinksInterface.Send.ID
         //Skicka signal/värde/return till DrinksInteraceActivity så den läser in rätt Strings/XML
         startActivity(intent);
@@ -160,16 +174,13 @@ public class DrinksActivity extends Activity {
 
         String message = editText.getText().toString().toLowerCase();
         if (message.equals("white russian")||(message.equals("whiterussian"))){
-            Intent intent = new Intent(this,DrinksInterfaceActivity.class);
-            startActivity(intent);
+            startDrinksInterfaceActivity(view, 1);
         }
         if (message.equals("p2")){
-            Intent intent = new Intent(this,DrinksInterfaceActivity.class);
-            startActivity(intent);
+            startDrinksInterfaceActivity(view, 2);
         }
         if (message.equals("redbull vodka")||message.equals("redbullvodka")||message.equals("vodka redbull")||message.equals("vodkaredbull")){
-            Intent intent = new Intent(this,DrinksInterfaceActivity.class);
-            startActivity(intent);
+            startDrinksInterfaceActivity(view, 3);
         }
 
     }

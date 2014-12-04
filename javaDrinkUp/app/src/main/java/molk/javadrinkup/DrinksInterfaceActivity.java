@@ -20,16 +20,50 @@ public class DrinksInterfaceActivity extends DrinksActivity {
         //SQL LITE
     }
     /*/
+    String urlID;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drinksinterface);
-        DrinksActivity hej = new DrinksActivity();
         TextView descriptionHeader = (TextView) findViewById(R.id.descriptionHeader);
         TextView descriptionContent = (TextView) findViewById(R.id.descriptionContent);
 
-        descriptionHeader.setText(getResources().getString(R.string.WhiterussianHead));
-        descriptionContent.setText(getResources().getString(R.string.WhiterussianInfo));
+        int drinkId = getIntent().getIntExtra(DrinksActivity.EXTRA_DRINK_ID, 0);
+
+        if (drinkId == 1) {
+            descriptionHeader.setText(getResources().getString(R.string.WhiterussianHead));
+            descriptionContent.setText(getResources().getString(R.string.WhiterussianInfo));
+            urlID = getString(R.string.linkWhiteRussian);
+        } else if (drinkId == 2) {
+            descriptionHeader.setText(getResources().getString(R.string.P2Head));
+            descriptionContent.setText(getResources().getString(R.string.P2Info));
+            urlID = getString(R.string.linkP2);
+        }
+        else if (drinkId == 3) {
+            descriptionHeader.setText(getResources().getString(R.string.VodkaRedbullHead));
+            descriptionContent.setText(getResources().getString(R.string.VodkaRedbullInfo));
+            urlID = getString(R.string.linkVodkaRedbull);
+        }
+        else if (drinkId == 4) {
+            descriptionHeader.setText(getResources().getString(R.string.GinTonicHead));
+            descriptionContent.setText(getResources().getString(R.string.GinTonicInfo));
+            urlID = getString(R.string.linkGinTonic);
+        }
+        else if (drinkId == 5) {
+            descriptionHeader.setText(getResources().getString(R.string.BlueLagoonHead));
+            descriptionContent.setText(getResources().getString(R.string.BlueLagoonInfo));
+            urlID = getString(R.string.linkBlueLagoon);
+        }
+        else if (drinkId == 6) {
+            descriptionHeader.setText(getResources().getString(R.string.ScrewdriverHead));
+            descriptionContent.setText(getResources().getString(R.string.ScrewdriverInfo));
+            urlID = getString(R.string.linkScrewdriver);
+        }
+        else if (drinkId == 7) {
+            descriptionHeader.setText(getResources().getString(R.string.CubaLibreHead));
+            descriptionContent.setText(getResources().getString(R.string.CubaLibreInfo));
+            urlID = getString(R.string.linkCubaLibre);
+        }
     }
 
 
@@ -54,9 +88,9 @@ public class DrinksInterfaceActivity extends DrinksActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    public void startSystem(View view) {
+    public void startLink(View view) {
 
-        String url = getResources().getString(R.string.linkStaropramen);
+        String url = urlID;
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse(url));
         startActivity(i);
