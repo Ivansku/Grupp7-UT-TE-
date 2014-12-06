@@ -1,61 +1,188 @@
 package molk.javadrinkup;
 
-import android.app.Activity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
+
 
 
 public class CiderActivity extends Activity {
-    ArrayList<String> listItems;
+    public final static String EXTRA_MESSAGE = "molk.javaDrinkUp.MESSAGE";
+
+    public final static String EXTRA_DRINK_ID = "se.molk.DRINK_ID";
+
+    // Array of strings storing drink names
+
+    String[] drinks = new String[] {
+            "Kopparberg",
+            "Starobrno",
+            "Sol",
+            "Corona",
+            "New Castle",
+            "Heineken",
+            "Carlsberg"
+    };
+
+    // Array of integers points to images stored in /res/drawable-ldpi/
+    int[] pictures = new int[]{
+            R.drawable.ic_launcher,
+            R.drawable.ic_launcher,
+            R.drawable.ic_launcher,
+            R.drawable.ic_launcher,
+            R.drawable.ic_launcher,
+            R.drawable.ic_launcher,
+            R.drawable.ic_launcher,
+
+    };
+
+    // Array of strings to store info
+    String[] info = new String[]{
+            "Alkoholhalt: 5% Storlek:50cl",
+            "Alkoholhalt: 5% Storlek:50cl",
+            "Alkoholhalt: 5% Storlek:50cl",
+            "Alkoholhalt: 5% Storlek:50cl",
+            "Alkoholhalt: 5% Storlek:50cl",
+            "Alkoholhalt: 5% Storlek:50cl",
+            "Alkoholhalt: 5% Storlek:50cl",
+    };
+
+    /** Called when the activity is first created. */
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cider);
-    }
-    //Method for list
-    public void ListCider(View view) {
+        setContentView(R.layout.activity_drinks);
+        String message = getIntent().getStringExtra(DrinksActivity.EXTRA_MESSAGE);
+        TextView myTextview = (TextView) findViewById(R.id.search_drink);
+        myTextview.setText(message);
 
-        listItems =new ArrayList<String>();
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line, listItems);
-        //Adds Items in ListView-list.
-        listItems.add("Staropramen");
-        listItems.add("Corona");
-        listItems.add("White Russian");
-        listItems.add("Smirnoff Ice");
-        listItems.add("Breezer");
-        listItems.add("Rom & Cola");
-        listItems.add("Gin & Tonic");
-        //Print list
-        ListView listView = (ListView) findViewById(R.id.ciderListView);
-        listView.setAdapter(adapter);
 
-    }
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_beer, menu);
-        return true;
-    }
+        // Each row in the list stores drink name, info and pic
+        List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        for(int i=0;i<7;i++){
+            HashMap<String, String> hm = new HashMap<String,String>();
+            hm.put("txt", "" + drinks[i]);
+            hm.put("inf","Info : " + info[i]);
+            hm.put("pic", Integer.toString(pictures[i]) );
+            aList.add(hm);
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
         }
 
-        return super.onOptionsItemSelected(item);
+        // Keys used in Hashmap
+        String[] from = { "pic","txt","inf" };
+
+        // Ids of views in listview_layout
+        int[] to = { R.id.pic,R.id.txt,R.id.inf};
+
+        // Instantiating an adapter to store each items
+        // R.layout.listview_layout defines the layout of each item
+        SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), aList, R.layout.activity_drink_list, from, to);
+
+        // Getting a reference to listview of main.xml layout file
+        final ListView listView = ( ListView ) findViewById(R.id.drinksListView);
+
+        // Setting the adapter to the listView
+        listView.setAdapter(adapter);
+
+        // Item Click Listener for the listview
+
+        AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+            @Override
+
+            public void onItemClick(AdapterView<?> parent, View container, int position, long id) {
+                // Getting the Container Layout of the ListView
+                LinearLayout linearLayoutParent = (LinearLayout) container;
+
+                // Getting the inner Linear Layout
+                LinearLayout linearLayoutChild = (LinearLayout ) linearLayoutParent.getChildAt(1);
+
+                // Getting the Country TextView
+                TextView tvDrink = (TextView) linearLayoutChild.getChildAt(0);
+
+
+                if(tvDrink.getText().toString().equals("Staropramen")){
+                    startDrinksInterfaceActivity(linearLayoutChild, 8);
+                }
+
+                if(tvDrink.getText().toString().equals("Sol")){
+                    startDrinksInterfaceActivity(linearLayoutChild, 9);
+                }
+                if(tvDrink.getText().toString().equals("Corona")){
+                    startDrinksInterfaceActivity(linearLayoutChild, 10);
+                }
+                if(tvDrink.getText().toString().equals("New Castle")){
+                    startDrinksInterfaceActivity(linearLayoutChild, 11);
+                }
+                if(tvDrink.getText().toString().equals("Heineken")){
+                    startDrinksInterfaceActivity(linearLayoutChild, 12);
+                }
+                if(tvDrink.getText().toString().equals("Carlsberg")){
+                    startDrinksInterfaceActivity(linearLayoutChild, 13);
+
+                }if(tvDrink.getText().toString().equals("Starobrno")){
+                    startDrinksInterfaceActivity(linearLayoutChild, 14);
+                }
+
+            }
+
+
+        };
+
+
+        // Setting the item click listener for the listview
+        listView.setOnItemClickListener(itemClickListener);
     }
+    public void startDrinksInterfaceActivity(View view, int drinkId) {
+        Intent intent = new Intent(this, DrinksInterfaceActivity.class);
+        intent.putExtra(EXTRA_DRINK_ID, drinkId);
+        //DrinksInterface.Send.ID
+        //Skicka signal/värde/return till DrinksInteraceActivity så den läser in rätt Strings/XML
+        startActivity(intent);
+
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+    public void searchTextDrinks(View view) {
+
+        EditText editText = (EditText) findViewById(R.id.search_drink);
+
+        String message = editText.getText().toString().toLowerCase();
+        if (message.equals("white russian")||(message.equals("whiterussian"))){
+            startDrinksInterfaceActivity(view, 1);
+        }
+        if (message.equals("p2")){
+            startDrinksInterfaceActivity(view, 2);
+        }
+        if (message.equals("redbull vodka")||message.equals("redbullvodka")||message.equals("vodka redbull")||message.equals("vodkaredbull")){
+            startDrinksInterfaceActivity(view, 3);
+        }
+
+    }
+
 }

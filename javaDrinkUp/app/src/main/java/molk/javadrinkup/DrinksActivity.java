@@ -25,7 +25,7 @@ import android.widget.Toast;
 
 
 public class DrinksActivity extends Activity {
-    String ID;
+
     public final static String EXTRA_MESSAGE = "molk.javaDrinkUp.MESSAGE";
 
     public final static String EXTRA_DRINK_ID = "se.molk.DRINK_ID";

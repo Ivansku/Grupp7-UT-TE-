@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ public class RecipeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
 
     }
@@ -53,13 +55,8 @@ public class RecipeActivity extends Activity {
         startActivity(intent);
     }
         //Opens Alkoläsk-tab
-    public void startAlksoda(View view) {
+    public void startAlkosoda(View view) {
         Intent intent = new Intent(this, AlkosodaActivity.class);
-        startActivity(intent);
-    }
-        //Opens Cider-tab
-    public void startCider(View view) {
-        Intent intent = new Intent(this, CiderActivity.class);
         startActivity(intent);
     }
         //Open Wine-tab
