@@ -35,4 +35,28 @@
     <string name="linkBlueLagoon">http://dricka.se/drinkar/blue-lagoon/</string>
     <string name="linkScrewdriver">http://dricka.se/drinkar/screwdriver</string>
     <string name="linkCubaLibre">http://dricka.se/drinkar/cuba-libre/</string>
+    <string name="SystemBtnText1">Gå till Dricka.se</string>
+    <string name="StaropramenHead">Staropramen</string>
+    <string name="StaropramenInfo"><b>Alkoholhalt:</b> 5,0 %\n <b>Användning:</b>Partydrink \n <b>Smak:</b> Syrlig spritdryck.\n <b>Färg:</b> En vattenklar färg med nyanser av grönt\n<b>Råvaror:</b> Vaniljvodka, Sourz Sour Apple, Limejuice och fruktsoda\n</string>
+    <string name="linkStaropramen">http://systembolaget.se</string>
+    <string name="SystemBtnText2">Gå till Systembolaget.se</string>
+    <string name="SolHead">Sol</string>
+    <string name="SolInfo"><b>Alkoholhalt:</b> 5,0 %\n <b>Användning:</b>Partydrink \n <b>Smak:</b> Syrlig spritdryck.\n <b>Färg:</b> En vattenklar färg med nyanser av grönt\n<b>Råvaror:</b> Vaniljvodka, Sourz Sour Apple, Limejuice och fruktsoda\n</string>
+    <string name="linkSol">http://systembolaget.se</string>
+    <string name="CoronaHead">Corona</string>
+    <string name="CoronaInfo"><b>Alkoholhalt:</b> 5,0 %\n <b>Användning:</b>Partydrink \n <b>Smak:</b> Syrlig spritdryck.\n <b>Färg:</b> En vattenklar färg med nyanser av grönt\n<b>Råvaror:</b> Vaniljvodka, Sourz Sour Apple, Limejuice och fruktsoda\n</string>
+    <string name="linkCorona">http://systembolaget.se</string>
+    <string name="NewCastleHead">New Castle</string>
+    <string name="NewCastleInfo"><b>Alkoholhalt:</b> 5,0 %\n <b>Användning:</b>Partydrink \n <b>Smak:</b> Syrlig spritdryck.\n <b>Färg:</b> En vattenklar färg med nyanser av grönt\n<b>Råvaror:</b> Vaniljvodka, Sourz Sour Apple, Limejuice och fruktsoda\n</string>
+    <string name="linkNewCastle">http://systembolaget.se</string>
+    <string name="CarlsbergHead">Staropramen</string>
+    <string name="CarlsbergInfo"><b>Alkoholhalt:</b> 5,0 %\n <b>Användning:</b>Partydrink \n <b>Smak:</b> Syrlig spritdryck.\n <b>Färg:</b> En vattenklar färg med nyanser av grönt\n<b>Råvaror:</b> Vaniljvodka, Sourz Sour Apple, Limejuice och fruktsoda\n</string>
+    <string name="linkCarlsberg">http://systembolaget.se</string>
+    <string name="HeinekenHead">Staropramen</string>
+    <string name="HeinekenInfo"><b>Alkoholhalt:</b> 5,0 %\n <b>Användning:</b>Partydrink \n <b>Smak:</b> Syrlig spritdryck.\n <b>Färg:</b> En vattenklar färg med nyanser av grönt\n<b>Råvaror:</b> Vaniljvodka, Sourz Sour Apple, Limejuice och fruktsoda\n</string>
+    <string name="linkHeineken">http://systembolaget.se</string>
+    <string name="StarobrnoHead">Staropramen</string>
+    <string name="StarobrnoInfo"><b>Alkoholhalt:</b> 5,0 %\n <b>Användning:</b>Partydrink \n <b>Smak:</b> Syrlig spritdryck.\n <b>Färg:</b> En vattenklar färg med nyanser av grönt\n<b>Råvaror:</b> Vaniljvodka, Sourz Sour Apple, Limejuice och fruktsoda\n</string>
+    <string name="linkStarobrno">http://systembolaget.se</string>
+
 </resources>

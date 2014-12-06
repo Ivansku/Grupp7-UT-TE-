@@ -124,25 +124,26 @@ public class BeerActivity extends Activity {
 
 
                 if(tvDrink.getText().toString().equals("Staropramen")){
-                    startDrinksInterfaceActivity(linearLayoutChild, 1);
+                    startDrinksInterfaceActivity(linearLayoutChild, 8);
                 }
-                if(tvDrink.getText().toString().equals("Starobrno")){
-                    startDrinksInterfaceActivity(linearLayoutChild, 2);
-                }
+
                 if(tvDrink.getText().toString().equals("Sol")){
-                    startDrinksInterfaceActivity(linearLayoutChild, 3);
+                    startDrinksInterfaceActivity(linearLayoutChild, 9);
                 }
                 if(tvDrink.getText().toString().equals("Corona")){
-                    startDrinksInterfaceActivity(linearLayoutChild, 4);
+                    startDrinksInterfaceActivity(linearLayoutChild, 10);
                 }
                 if(tvDrink.getText().toString().equals("New Castle")){
-                    startDrinksInterfaceActivity(linearLayoutChild, 5);
+                    startDrinksInterfaceActivity(linearLayoutChild, 11);
                 }
                 if(tvDrink.getText().toString().equals("Heineken")){
-                    startDrinksInterfaceActivity(linearLayoutChild, 6);
+                    startDrinksInterfaceActivity(linearLayoutChild, 12);
                 }
                 if(tvDrink.getText().toString().equals("Carlsberg")){
-                    startDrinksInterfaceActivity(linearLayoutChild, 7);
+                    startDrinksInterfaceActivity(linearLayoutChild, 13);
+
+                }if(tvDrink.getText().toString().equals("Starobrno")){
+                    startDrinksInterfaceActivity(linearLayoutChild, 14);
                 }
 
             }
