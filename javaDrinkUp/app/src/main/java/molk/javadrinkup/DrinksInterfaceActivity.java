@@ -116,6 +116,86 @@ public class DrinksInterfaceActivity extends DrinksActivity {
             SystemBtn.setText(getResources().getString(R.string.SystemBtnText2));
             urlID = getString(R.string.linkStarobrno);
         }
+        else if (drinkId == 15) {
+            descriptionHeader.setText(getResources().getString(R.string.StarobrnoHead));
+            descriptionContent.setText(getResources().getString(R.string.StarobrnoInfo));
+            SystemBtn.setText(getResources().getString(R.string.SystemBtnText2));
+            urlID = getString(R.string.linkStarobrno);
+        }
+        else if (drinkId == 16) {
+            descriptionHeader.setText(getResources().getString(R.string.StarobrnoHead));
+            descriptionContent.setText(getResources().getString(R.string.StarobrnoInfo));
+            SystemBtn.setText(getResources().getString(R.string.SystemBtnText2));
+            urlID = getString(R.string.linkStarobrno);
+        }
+        else if (drinkId == 17) {
+            descriptionHeader.setText(getResources().getString(R.string.StarobrnoHead));
+            descriptionContent.setText(getResources().getString(R.string.StarobrnoInfo));
+            SystemBtn.setText(getResources().getString(R.string.SystemBtnText2));
+            urlID = getString(R.string.linkStarobrno);
+        }
+        else if (drinkId == 18) {
+            descriptionHeader.setText(getResources().getString(R.string.StarobrnoHead));
+            descriptionContent.setText(getResources().getString(R.string.StarobrnoInfo));
+            SystemBtn.setText(getResources().getString(R.string.SystemBtnText2));
+            urlID = getString(R.string.linkStarobrno);
+        }
+        else if (drinkId == 19) {
+            descriptionHeader.setText(getResources().getString(R.string.StarobrnoHead));
+            descriptionContent.setText(getResources().getString(R.string.StarobrnoInfo));
+            SystemBtn.setText(getResources().getString(R.string.SystemBtnText2));
+            urlID = getString(R.string.linkStarobrno);
+
+        }
+        else if (drinkId == 20) {
+            descriptionHeader.setText(getResources().getString(R.string.StarobrnoHead));
+            descriptionContent.setText(getResources().getString(R.string.StarobrnoInfo));
+            SystemBtn.setText(getResources().getString(R.string.SystemBtnText2));
+            urlID = getString(R.string.linkStarobrno);
+
+        }
+        else if (drinkId == 21) {
+            descriptionHeader.setText(getResources().getString(R.string.StarobrnoHead));
+            descriptionContent.setText(getResources().getString(R.string.StarobrnoInfo));
+            SystemBtn.setText(getResources().getString(R.string.SystemBtnText2));
+            urlID = getString(R.string.linkStarobrno);
+
+        }
+        else if (drinkId == 22) {
+            descriptionHeader.setText(getResources().getString(R.string.StarobrnoHead));
+            descriptionContent.setText(getResources().getString(R.string.StarobrnoInfo));
+            SystemBtn.setText(getResources().getString(R.string.SystemBtnText2));
+            urlID = getString(R.string.linkStarobrno);
+
+        }
+        else if (drinkId == 23) {
+            descriptionHeader.setText(getResources().getString(R.string.StarobrnoHead));
+            descriptionContent.setText(getResources().getString(R.string.StarobrnoInfo));
+            SystemBtn.setText(getResources().getString(R.string.SystemBtnText2));
+            urlID = getString(R.string.linkStarobrno);
+
+        }
+        else if (drinkId == 24) {
+            descriptionHeader.setText(getResources().getString(R.string.StarobrnoHead));
+            descriptionContent.setText(getResources().getString(R.string.StarobrnoInfo));
+            SystemBtn.setText(getResources().getString(R.string.SystemBtnText2));
+            urlID = getString(R.string.linkStarobrno);
+
+        }
+        else if (drinkId == 25) {
+            descriptionHeader.setText(getResources().getString(R.string.StarobrnoHead));
+            descriptionContent.setText(getResources().getString(R.string.StarobrnoInfo));
+            SystemBtn.setText(getResources().getString(R.string.SystemBtnText2));
+            urlID = getString(R.string.linkStarobrno);
+
+        }
+        else if (drinkId == 26) {
+            descriptionHeader.setText(getResources().getString(R.string.StarobrnoHead));
+            descriptionContent.setText(getResources().getString(R.string.StarobrnoInfo));
+            SystemBtn.setText(getResources().getString(R.string.SystemBtnText2));
+            urlID = getString(R.string.linkStarobrno);
+
+        }
     }
 
 
