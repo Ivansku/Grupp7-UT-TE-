@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.view.WindowManager;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -24,8 +26,8 @@ import android.widget.Toast;
 
 
 
-public class DrinksActivity extends Activity {
-
+public class DrinksActivity extends ListActivity {
+    private DataSource ds;
     public final static String EXTRA_MESSAGE = "molk.javaDrinkUp.MESSAGE";
 
     public final static String EXTRA_DRINK_ID = "se.molk.DRINK_ID";
@@ -73,6 +75,12 @@ public class DrinksActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drinks);
+        ds = new DataSource(this);
+        ds.open();
+        List<Drinks> recipes = ds.getAllRecipes();
+
+        ArrayAdapter<Drinks> adapter = new ArrayAdapter<Drinks>(this, android.R.layout.simple_list_item_1, recipes);
+        setListAdapter(adapter);
         String message = getIntent().getStringExtra(DrinksActivity.EXTRA_MESSAGE);
         TextView myTextview = (TextView) findViewById(R.id.search_drink);
         myTextview.setText(message);
