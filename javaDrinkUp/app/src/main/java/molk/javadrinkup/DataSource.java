@@ -18,8 +18,7 @@ public class DataSource {
     private SQLiteDatabase database;
     private DatabaseHelper helper;
 
-    private String[] recipeColumns = { "id", "name" };
-    private String[] ingredientColumns= { "id", "ingredient" };
+    private String[] drinkColumns = { "id", "name" };
 
     public DataSource(Context context) {
         helper = new DatabaseHelper(context);
@@ -36,153 +35,70 @@ public class DataSource {
     /*
     just recipe things
      */
-    public Recipe createRecipe(String name) {
+    public Drink createDrink(String name) {
         ContentValues values = new ContentValues();
         values.put("name", name);
         long insertId = database.insert(
-                DatabaseHelper.TABLE_RECIPES,
+                DatabaseHelper.TABLE_DRINKS,
                 null,
                 values);
         Cursor cursor = database.query(
-                DatabaseHelper.TABLE_RECIPES,
-                recipeColumns,
+                DatabaseHelper.TABLE_DRINKS,
+                drinkColumns,
                 "id = " + insertId,
                 null, null, null, null
         );
         cursor.moveToFirst();
-        Recipe recipe = cursorToRecipe(cursor);
+        Drink drink = cursorToDrink(cursor);
         cursor.close();
-        return recipe;
+        return drink;
     }
 
-    public void deleteRecipe(Recipe recipe) {
-        long id = recipe.getId();
-        database.delete(DatabaseHelper.TABLE_RECIPES, "id = " + id, null);
+    public void deleteDrink(Drink drink) {
+        long id = drink.getId();
+        database.delete(DatabaseHelper.TABLE_DRINKS, "id = " + id, null);
     }
 
-    private Recipe cursorToRecipe(Cursor cursor) {
-        Recipe comment = new Recipe();
+    private Drink cursorToDrink(Cursor cursor) {
+        Drink comment = new Drink();
         comment.setId(cursor.getLong(0));
         comment.setName(cursor.getString(1));
         return comment;
     }
 
-    public List<Recipe> getAllRecipes() {
-        List<Recipe> recipes = new ArrayList<Recipe>();
+    public List<Drink> getAllDrinks() {
+        List<Drink> drinks = new ArrayList<Drink>();
         Cursor cursor = database.query(
-                DatabaseHelper.TABLE_RECIPES,
-                recipeColumns,
+                DatabaseHelper.TABLE_DRINKS,
+                drinkColumns,
                 null, null, null, null, null);
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            Recipe recipe = cursorToRecipe(cursor);
-            recipes.add(recipe);
+            Drink drink = cursorToDrink(cursor);
+            drinks.add(drink);
             cursor.moveToNext();
         }
         cursor.close();
-        return recipes;
+        return drinks;
     }
 
-    public Recipe getRecipe(long id) {
+    public Drink getDrink(long id) {
         Cursor cursor = database.query(
-                DatabaseHelper.TABLE_RECIPES,
-                recipeColumns,
+                DatabaseHelper.TABLE_DRINKS,
+                drinkColumns,
                 "id = " + id,
                 null, null, null, null
         );
         cursor.moveToFirst();
-        Recipe recipe = cursorToRecipe(cursor);
+        Drink drink = cursorToDrink(cursor);
         cursor.close();
-        return recipe;
+        return drink;
     }
         /*
         end just recipe things
          */
 
-    /*
-    start just ingredient things
-     */
-    public Ingredient createIngredient(String name, Recipe recipe) {
-        ContentValues values = new ContentValues();
-        values.put("ingredient", name);
-        values.put("recipe_id", recipe.getId());
-        long insertId = database.insert(
-                DatabaseHelper.TABLE_INGREDIENTS,
-                null,
-                values);
-        Cursor cursor = database.query(
-                DatabaseHelper.TABLE_INGREDIENTS,
-                ingredientColumns,
-                "id = " + insertId,
-                null, null, null, null
-        );
-        cursor.moveToFirst();
-        Ingredient ingredient = cursorToIngredient(cursor);
-        cursor.close();
-        return ingredient;
-    }
 
-    public void deleteIngredient(Ingredient ingredient) {
-        long id = ingredient.getId();
-        database.delete(DatabaseHelper.TABLE_INGREDIENTS, "id = " + id, null);
-    }
-
-    private Ingredient cursorToIngredient(Cursor cursor) {
-        Ingredient comment = new Ingredient();
-        comment.setId(cursor.getLong(0));
-        comment.setIngredient(cursor.getString(1));
-        return comment;
-    }
-
-    public List<Ingredient> getAllIngredients() {
-        List<Ingredient> ingredients = new ArrayList<Ingredient>();
-        Cursor cursor = database.query(
-                DatabaseHelper.TABLE_INGREDIENTS,
-                ingredientColumns,
-                null, null, null, null, null);
-
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            Ingredient ingredient = cursorToIngredient(cursor);
-            ingredients.add(ingredient);
-            cursor.moveToNext();
-        }
-        cursor.close();
-        return ingredients;
-    }
-
-    public Ingredient getIngredient(long id) {
-        Cursor cursor = database.query(
-                DatabaseHelper.TABLE_INGREDIENTS,
-                ingredientColumns,
-                "id = " + id,
-                null, null, null, null
-        );
-        cursor.moveToFirst();
-        Ingredient ingredient = cursorToIngredient(cursor);
-        cursor.close();
-        return ingredient;
-    }
-    /*
-    end just ingredient things
-     */
-    public List<Ingredient> getIngredientsForRecipe(Recipe recipe) {
-        List<Ingredient> ingredients = new ArrayList<Ingredient>();
-        Cursor cursor = database.query(
-                DatabaseHelper.TABLE_INGREDIENTS,
-                ingredientColumns,
-                "recipe_id =" + recipe.getId(),
-                null, null, null, null);
-
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            Ingredient ingredient = cursorToIngredient(cursor);
-            ingredients.add(ingredient);
-            cursor.moveToNext();
-        }
-        cursor.close();
-        return ingredients;
-    }
 }
 
